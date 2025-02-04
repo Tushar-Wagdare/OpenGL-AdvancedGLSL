@@ -6,4 +6,4 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://github.com/Tushar-Wagdare/OpenGL-AdvancedGLSL/blob/main/screenshot1.png" alt="project-screenshot" width="800" height="600/">
+<img src="https://github.com/Tushar-Wagdare/OpenGL-AdvancedGLSL/blob/main/screenshot1.png" alt="project-screenshot" width="1000" height="600/">
