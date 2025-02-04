@@ -2,88 +2,72 @@
 
 ## Description
 
-Experiments and implementations of advanced GLSL rendering techniques in C++, including custom shaders and effects. This repository demonstrates various advanced techniques for creating visually appealing and efficient graphics.
+Experiments and implementations of advanced GLSL rendering techniques in C++, including custom shaders and effects.
 
 ## Screenshots
 
-[Insert Screenshot 1 Here - e.g., an in-game rendering]
+Here are some screenshots of the advanced effects demonstrated in this repository:
 
-[Insert Screenshot 2 Here - e.g., a specific shader effect in action]
+![Screenshot 1](images/screenshot1.png)
+*Caption: Example of [Describe the effect shown in screenshot 1]*
+
+![Screenshot 2](images/screenshot2.png)
+*Caption: Another example of [Describe the effect shown in screenshot 2]*
 
 ## Dependencies
 
-This project relies on the following libraries:
+This project requires the following dependencies:
 
-*   **OpenGL:** The core graphics API. This project requires OpenGL version [Specify OpenGL Version]. Ensure your graphics drivers are up to date.
+*   **OpenGL:** The standard OpenGL library. Most systems already have OpenGL drivers installed. You may need to install or update your graphics drivers for optimal performance.
 
-*   **GLEW (OpenGL Extension Wrangler Library):** Used to manage OpenGL extensions.
+*   **GLEW (OpenGL Extension Wrangler Library):** Used for loading OpenGL extensions.
 
-    *   **Download:** [https://github.com/nigels-com/glew]
+    *   **Download:** [https://github.com/nigels-com/glew](https://github.com/nigels-com/glew)
     *   **Installation:**
         1.  Download the GLEW source code.
-        2.  Build GLEW using the provided Visual Studio solution (`glew.sln`) in the `build\vc15` directory (or a compatible version).
-        3.  Copy the `glew32.dll` (from `lib\Release\Win32` or `lib\Release\x64` depending on your build) to your project's executable directory (where the `.exe` file will be).
-        4.  Copy the GLEW header files (from `include\GL`) to your project's include directory.
-        5.  Link against `glew32.lib` and `opengl32.lib` in your Visual Studio project settings (see Build Instructions below).
+        2.  Extract the contents.
+        3.  Build GLEW using the provided Visual Studio project (or your preferred method).
+        4.  Copy the `glew32.lib` file to your project's library directory.
+        5.  Copy the `glew32.dll` file to your project's executable directory or a location in your system's PATH.
+        6.  Copy the GLEW header files (from the `include/GL` directory within the GLEW source) to your project's include directory.
 
-*   **GLM (OpenGL Mathematics):** A header-only C++ mathematics library used for vector, matrix, and quaternion operations.
+*   **GLM (OpenGL Mathematics):** A header-only C++ mathematics library.
 
-    *   **Download:** [https://github.com/g-truc/glm]
-    *   **Installation:**
-        1.  Download the GLM source code.
-        2.  Copy the `glm` directory to your project's include directory. GLM is header-only, so no building or linking is required.
+    *   **Download:** [https://github.com/g-truc/glm](https://github.com/g-truc/glm)
+    *   **Installation:** Simply copy the `glm` directory (containing the header files) to your project's include directory.
 
 ## Build Instructions (Visual Studio 2022)
 
-1.  **Clone the Repository:** Clone this repository to your local machine.
-
+1.  **Clone the repository:**
+    ```bash
+    git clone [your repository URL]
     ```
-    git clone [Your Repository URL]
-    ```
-
-2.  **Open the Visual Studio Solution:** Open the `OpenGL-AdvancedGLSL.sln` file in Visual Studio 2022.
-
+2.  **Open the Visual Studio solution file (.sln):**
+    Navigate to the project directory and open the `OpenGLVcxproj.sln` file (or similar) in Visual Studio 2022.
 3.  **Configure Include Directories:**
-    *   In Solution Explorer, right-click on your project and select "Properties."
-    *   Navigate to "C/C++" -> "General."
-    *   In the "Additional Include Directories" field, add the paths to the GLEW header files and the GLM directory. For example:
-
-        ```
-        $(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLM;$(IncludePath)
-        ```
-
-    (You might need to create a "Dependencies" folder in your solution directory and place GLEW and GLM folders within it)
-
+    *   In Visual Studio, right-click on the project in the Solution Explorer and select "Properties".
+    *   Go to "C/C++" -> "General" -> "Additional Include Directories".
+    *   Add the following directories:
+        *   The directory where you placed the GLEW header files (e.g., `C:\libs\glew\include`).
+        *   The directory where you placed the GLM header files (e.g., `C:\libs\glm`).
 4.  **Configure Library Directories:**
-    *   Navigate to "Linker" -> "General."
-    *   In the "Additional Library Directories" field, add the path to the GLEW library files (where `glew32.lib` is located). For example:
-
-        ```
-        $(SolutionDir)Dependencies\GLEW\lib\Release\Win32;$(LibraryPath)
-        ```
-
-    (Adjust the path according to your GLEW build configuration – Win32 or x64, Debug or Release).
-
+    *   Go to "Linker" -> "General" -> "Additional Library Directories".
+    *   Add the directory where you placed the GLEW library file (e.g., `C:\libs\glew\lib\Release\Win32` or `C:\libs\glew\lib\Release\x64`, depending on your architecture).
 5.  **Configure Linker Input:**
-    *   Navigate to "Linker" -> "Input."
-    *   In the "Additional Dependencies" field, add the following libraries:
-
-        ```
-        opengl32.lib
-        glew32.lib
-        ```
-
-6.  **Build the Solution:** Press Ctrl+Shift+B or select "Build" -> "Build Solution" to build the project.
-
-7.  **Copy GLEW DLL:** Copy `glew32.dll` from GLEW build output directory (where you built GLEW) into the same directory as the compiled `.exe` file (Debug or Release directory).
+    *   Go to "Linker" -> "Input" -> "Additional Dependencies".
+    *   Add `opengl32.lib` and `glew32.lib` to the list of dependencies.
+6.  **Build the project:**
+    *   Select "Build" -> "Build Solution" from the menu.
+    *   Choose the appropriate build configuration (Debug or Release) and platform (Win32 or x64).
 
 ## Usage
 
-1.  **Run the Executable:** Run the compiled executable (located in the `Debug` or `Release` directory).
-
-2.  **Explore Techniques:** The demo showcases various advanced GLSL techniques. You can explore them by [Explain how the user can interact with the demo.  E.g., "pressing different number keys," "modifying shader parameters in the code," or "using GUI elements if you have them"].
-
-3.  **Code Modification:** You can modify the GLSL shaders (located in the `shaders` directory) to experiment with different effects. Rebuild the project to see the changes.
+1.  **Run the executable:**
+    After building the project, you'll find the executable in the project's output directory (e.g., `Debug` or `Release`).
+2.  **Explore the techniques:**
+    The demo application showcases various advanced OpenGL techniques. You can typically cycle through different examples using [Explain how to control the demo – e.g., keyboard keys, GUI elements].
+3.  **Examine the code:**
+    The source code for each technique is located in the `src` directory.  Examine the C++ and GLSL shader code to understand how the effects are implemented.
 
 ## License
 
