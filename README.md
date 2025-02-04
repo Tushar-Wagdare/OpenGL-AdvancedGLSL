@@ -2,11 +2,10 @@
 
 ## Description
 
-This repository showcases advanced OpenGL Shading Language (GLSL) techniques implemented in C++. It demonstrates various rendering effects using custom shaders.  It provides a practical learning resource for developers interested in exploring modern graphics programming.
+This repository showcases advanced OpenGL Shading Language (GLSL) techniques implemented in C++ and GLSL. It demonstrates various rendering effects using custom shaders. This project serves as a practical learning resource for developers interested in exploring modern graphics programming.
 
 ## Screenshots
 
-<!-- Include screenshots here -->
 ![Screenshot 1](screenshot1.png)
 ![Screenshot 2](screenshot2.png)
 
@@ -15,28 +14,24 @@ This repository showcases advanced OpenGL Shading Language (GLSL) techniques imp
 Before building and running this project, you need to install the following dependencies:
 
 *   **GLEW (OpenGL Extension Wrangler Library):**  Download GLEW and add the `include` directory and library files (e.g., `glew32.lib`) to your system environment variables.
-*   **GLM (OpenGL Mathematics):**  Download GLM and add the `glm` directory to your system environment variables.
+*   **GLM (OpenGL Mathematics):**  Download GLM. GLM is a header-only library, so simply copy the `glm` directory into your project's include path.
 
-**Note:** Adding GLEW and GLM to your system environment variables ensures that Visual Studio can find them during the build process.
+**Note:** Adding GLEW and GLM to your system environment variables ensures that Visual Studio can find them during the build process. This typically involves adding paths to the `INCLUDE` and `LIB` environment variables.
 
 ## Build Instructions (Visual Studio 2022)
 
 Follow these steps to build the project using Visual Studio 2022:
 
-1.  **Clone the Repository:**  Clone this repository to your local machine.
+1.  **Clone the Repository:**  Clone this repository to your local machine using the following command:
     ```bash
-    git clone [Repository URL]
+    git clone https://github.com/Tushar-Wagdare/OpenGL-AdvancedGLSL.git
     ```
-2.  **Open the Solution:**  Open the `OGLvcvproj.sln` file in Visual Studio 2022.
-3.  **Set Build Configuration:**  Select either "Debug" or "Release" configuration from the dropdown menu.
-4.  **Build the Solution:**  Go to `Build` -> `Build Solution` (or press `Ctrl+Shift+B`). Ensure that all the required dependencies are present.
+2.  **Open the Solution:**  Open the `OGL.sln` file in Visual Studio 2022.
+3.  **Build the Solution:**  Go to `Build` -> `Build Solution` (or press `Ctrl+Shift+B`).
+4.  **Ensure all dependencies are present:**
+    Make sure all the dependencies are installed and placed in the system environment.
+5.  **Run the Solution** After building, run the solution.
 
 ## Usage
 
-After successfully building the project, you can run the executable located in the `x64/Debug` or `x64/Release` directory.
-
-Experiment with different shader parameters and explore the source code to understand the implementation details.
-
-**Exploring the Techniques:**
-
-*   Look for the relevant shader files in the `shaders` directory and the C++ code in the `OGL.cpp` file.
+After successfully building the project, you can run the executable located in the `x64/Debug` directory. The demo showcases various advanced OpenGL techniques.
